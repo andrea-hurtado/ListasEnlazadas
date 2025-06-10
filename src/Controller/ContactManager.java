@@ -2,6 +2,8 @@ package Controller;
 
 import java.util.LinkedList;
 
+import model.Contact;
+
 public class ContactManager {
     private LinkedList<Contact<String,String>> contacts;
     public ContactManager(){
