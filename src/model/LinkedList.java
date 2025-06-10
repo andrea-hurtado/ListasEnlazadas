@@ -85,7 +85,7 @@ public class LinkedList<T> {
         System.out.println(current.getValue()+"-> END");
     }
 
-    p
+    
     
     
 }
