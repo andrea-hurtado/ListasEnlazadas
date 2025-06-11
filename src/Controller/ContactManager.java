@@ -5,16 +5,16 @@ import java.util.LinkedList;
 import model.Contact;
 
 public class ContactManager {
-    private LinkedList<Contact<String,String>> contacts;
+    private LinkedList<Contact> contacts;
 
     public ContactManager(){
         contacts = new LinkedList<>();
     }
-    public void addContact(Contact<String,String> contact){
+    public void addContact(Contact contact){
         contacts.add(contact);
     }
-    public Contact<String,String> findContact(String name){
-        for (Contact<String,String> contact: contacts){
+    public Contact findContact(String name){
+        for (Contact contact: contacts){
             if (contact.getName().equalsIgnoreCase(name)){
                 return contact;
             }
@@ -22,7 +22,7 @@ public class ContactManager {
         return null;
     }
     public void deleteContact(String name){
-        Contact<String,String> toDelete = findContact(name);
+        Contact toDelete = findContact(name);
         if(toDelete != null){
             contacts.remove(toDelete);
         }
@@ -33,7 +33,7 @@ public class ContactManager {
 
         }
         else {
-            for (Contact<String,String> contact: contacts){
+            for (Contact contact: contacts){
                 System.out.print(contact);
             }
         }

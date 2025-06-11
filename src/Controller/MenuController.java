@@ -19,7 +19,7 @@ public class MenuController {
 
         while(running){
             consoleView.displayMenu();
-            String choice = consoleView.getInput("Seleccione una opción: ");
+            String choice = consoleView.getInput("Seleccione una opción");
             switch (choice) {
                 case "1":
                 addContact();
@@ -52,14 +52,14 @@ public class MenuController {
     private void addContact() {
         String name = consoleView.getInput("Ingrese el nombre del contacto: ");
         String phone = consoleView.getInput("Ingrese el teléfono del contacto: ");
-        Contact<String, String> contact = new Contact<>(name, phone);
+        Contact contact = new Contact(name, phone);
         contactManager.addContact(contact);
         consoleView.showMessage("Se agregó correctamente!");
     }
 
     private void findContact() {
         String name = consoleView.getInput("Ingrese el nombre del contacto a buscar: ");
-        Contact<String, String> foundContact = contactManager.findContact(name);
+        Contact foundContact = contactManager.findContact(name);
         if (foundContact != null) {
             consoleView.showMessage("Contacto encontrado: " + foundContact);
         } else {
