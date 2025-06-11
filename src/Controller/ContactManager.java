@@ -6,6 +6,7 @@ import model.Contact;
 
 public class ContactManager {
     private LinkedList<Contact<String,String>> contacts;
+
     public ContactManager(){
         contacts = new LinkedList<>();
     }
@@ -13,15 +14,15 @@ public class ContactManager {
         contacts.add(contact);
     }
     public Contact<String,String> findContact(String name){
-        for (Contact<String,String> contact: contact){
-            if (contact.getName(),equalsIgnoreCase(name)){
+        for (Contact<String,String> contact: contacts){
+            if (contact.getName().equalsIgnoreCase(name)){
                 return contact;
             }
         }
         return null;
     }
     public void deleteContact(String name){
-        Contact<String,String> toDelete = findContactByName(name);
+        Contact<String,String> toDelete = findContact(name);
         if(toDelete != null){
             contacts.remove(toDelete);
         }
